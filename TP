@@ -1,0 +1,22 @@
+#importation des librairies
+import matplotlib.pyplot as plt
+import numpy as np
+from skimage import data,filters
+#récupération de l'image
+image = data.coins()
+plt.imshow(image)
+print(image[100,100])
+[n,m]=image.shape
+#fixage de seuil
+s=150
+#affichage image
+print (image[100,300])
+#méthode de binarisation
+for i in range(n):
+    for j in range(m):
+        if(image[i,j] > s):
+            image[i,j]=1
+        else :
+            image[i,j]=0
+plt.imshow(image)
+plt.show()
